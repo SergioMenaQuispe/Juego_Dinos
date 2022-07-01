@@ -1,9 +1,6 @@
-#include"Object.h"
+#include"../Classes/Object.cpp"
 #include<SFML/Graphics.hpp>
 using namespace sf;
-
-#ifndef SCENE
-#define SCENE
 
 /* 
    scene is an object that have all the subobjects as: 
@@ -14,14 +11,14 @@ using namespace sf;
 
 class Scene : public Object
 {
-    private:
+    protected:
         RenderWindow * myWindow;
+        bool show;
     public:
         Scene();
-        ~Scene();
-        void gameloop();
+        ~Scene(){}
+        virtual void gameloop();
         void setWindow(RenderWindow * window);
+        void turnView();
 };
 
-
-#endif SCENE

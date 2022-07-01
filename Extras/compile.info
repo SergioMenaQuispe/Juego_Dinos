@@ -1,0 +1,6 @@
+g++ -o Game/main.o -c Game/main.cpp -I ../include/SFML/SFML-2.5.1/include
+
+g++ Game/main.o -o Game/game -lsfml-graphics -lsfml-window -lsfml-system  
+
+
+./Game/game

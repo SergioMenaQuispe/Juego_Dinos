@@ -5,18 +5,11 @@
 #include<SFML/Graphics.hpp>
 using namespace sf;
 
-#ifndef OBJECT
-#define OBJECT
-
 class Object
 {
     protected:
         char label; /* label means name of the object*/
     public:
         Object(/* args */);
-        ~Object();
+        ~Object(){}
 };
-
-
-
-#endif OBJECT
