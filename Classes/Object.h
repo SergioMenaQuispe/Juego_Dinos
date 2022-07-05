@@ -1,3 +1,4 @@
+
 /*
     This is the main class, rest of classes are children of this class
 */
@@ -7,9 +8,10 @@ using namespace sf;
 
 class Object
 {
-    protected:
-        char label; /* label means name of the object*/
-    public:
-        Object(/* args */);
-        ~Object(){}
+protected:
+    std::string label; /* label means name of the object*/
+public:
+    Object(/* args */);
+    ~Object(){}
 };
+

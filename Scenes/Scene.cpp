@@ -1,26 +1,13 @@
-#ifndef SCENE
-#define SCENE
+#ifndef SCENE_H
+#define SCENE_H
 
 #include"Scene.h"
 
-Scene::Scene(){
-
+Scene::Scene(std::string label, RenderWindow * window){
+    this->window = window;
+    this->label = label;
 }
 
-void Scene::setWindow(RenderWindow * window){
-    this->myWindow = window;
-    show = true;
-}
+void Scene::draw(){}
 
-void Scene::gameloop(){
-    while (myWindow->isOpen() && show){
-        myWindow->clear();
-        myWindow->display();
-    }    
-}
-
-void Scene::turnView(){
-    show = !show;
-}
-
-#endif 
+#endif

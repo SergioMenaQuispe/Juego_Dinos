@@ -1,24 +1,15 @@
-#include"../Classes/Object.cpp"
 #include<SFML/Graphics.hpp>
+#include<iostream>
+#include"../Classes/Object.cpp"
+#include"../Player/Player.cpp"
 using namespace sf;
-
-/* 
-   scene is an object that have all the subobjects as: 
-        - characters
-        - obtacles
-        - etc.
-*/
 
 class Scene : public Object
 {
-    protected:
-        RenderWindow * myWindow;
-        bool show;
-    public:
-        Scene();
-        ~Scene(){}
-        virtual void gameloop();
-        void setWindow(RenderWindow * window);
-        void turnView();
+protected:
+    RenderWindow * window;
+public:
+    Scene(std::string label, RenderWindow * window);
+    ~Scene(){}
+    virtual void draw();
 };
-

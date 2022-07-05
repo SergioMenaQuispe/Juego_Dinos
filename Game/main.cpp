@@ -1,21 +1,31 @@
 #include<SFML/Graphics.hpp>
+#include<iostream>
 #include"../Scenes/Scene.cpp"
-#include"../Scene-Manager/SceneManager.cpp"
 #include"../Scenes/GameScene.cpp"
 using namespace sf;
 
+
+
 int main(){
 
-    SceneManager * manager = new SceneManager({800,600},"Mi ventana");
+    // main window
+    RenderWindow * window = new RenderWindow({800,600},"Screen");
 
-    Scene * scene1 = new Scene;
-    Scene * scene2 = new GameScene(Color::Blue);
+    // scene of the game
+    GameScene * scene = new GameScene("Game scene",window);
+
+    // create a player
+    Player * player1 = new Player("spritesheet.png");
+
+
+    // adding the player in the scene
+    scene->addPlayer(player1);
+
+    // loop the game
+    scene->gameloop();
+
 
     
-    manager->show(scene1);
-    manager->stopShow(scene1);
-    manager->show(scene2);
-
 
 
     return 0;
